@@ -8,6 +8,8 @@
     <meta content="The home page for zydezu.com" name="description">
     <link rel="icon" href="https://zydezu.com/assets/favicon.jpg" type="image/jpg">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bgvideo.css">
+    <link rel="stylesheet" href="css/homepage.css">
 
     <meta content="Main Page | zydezu.com" property="og:title" />
     <meta content="website" property="og:type" />
@@ -15,19 +17,31 @@
     <meta content="https://zydezu.com/assets/favicon.jpg" property="og:image" />
     <meta content="The home page for zydezu.com" property="og:description" />
     <meta content="#0009b2" name="theme-color" />
-
-    <!-- Include this to make the og:image larger -->
     <meta content="summary_large_image" name="twitter:card" />
+
+    <script src="scripts/p3animation.js" type="module"></script>
 </head>
 
 <body>
-    <div class="video-glass-pane" style="background-color: rgba(0, 0, 0, 0)"></div>
-    <video src="assets/bg/p3rbg.mp4" autoplay loop muted playsinline class="page-bg-video"></video>
+    <div id="blurred-glass-pane"></div>
 
-    <div class="homepage">
+    <video id="bg-video-intro" class="page-bg-video" autoplay muted playsinline>
+        <source src="assets/bg/p3rbganim.mp4" type="video/mp4">
+    </video>
 
+    <video id="bg-video-loop" class="page-bg-video" preload="auto" muted playsinline loop>
+        <source src="assets/bg/p3rbg.mp4" type="video/mp4">
+    </video>
+
+    <div class="home-page-container">
+        <div class="user-area">
+            <img src="assets/brand/kaworupfp.avif" class="user-image" alt="kaworu pfp">
+            <p class="p-after">"I'm bored"</p>
+        </div>
+        <div class="posts-area">
+            <p class="p-after">Comment here nerd</p>
+            <iframe src="https://kinositecomments.web.app/" id="commentSection" allowtransparency="true"></iframe>
+        </div>
     </div>
 
-    <p>Comment here nerd</p>
-    <iframe src="https://kinositecomments.web.app/" id="commentSection" allowtransparency="true"></iframe>
 </body>
