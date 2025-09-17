@@ -8,21 +8,43 @@
     <meta content="The home page for zydezu.com" name="description">
     <link rel="icon" href="https://zydezu.com/assets/favicon.jpg" type="image/jpg">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/bgvideo.css">
     <link rel="stylesheet" href="css/homepage.css">
+    <link rel="stylesheet" href="css/bgvideo.css">
+    <link rel="stylesheet" href="css/audioplayer.css">
 
     <meta content="Main Page | zydezu.com" property="og:title" />
     <meta content="website" property="og:type" />
     <meta content="https://zydezu.com/" property="og:url" />
     <meta content="https://zydezu.com/assets/favicon.jpg" property="og:image" />
     <meta content="The home page for zydezu.com" property="og:description" />
-    <meta content="#0009b2" name="theme-color" />
+    <meta content="#3fa0f5" name="theme-color" />
     <meta content="summary_large_image" name="twitter:card" />
 
     <script src="scripts/p3animation.js" type="module"></script>
 </head>
 
 <body>
+    <div>
+        <audio id="audio" src="assets/bgm/persona3/loading playlist.mp3" preload="auto"></audio>
+        <script type="text/javascript" src="scripts/audioplayer.js" id="audioPlayerScript" defer></script>
+        <div id="audioStatus" data-playlist="bgm.txt" class="hidden">
+            <div class="BGMNameArea"><span id="BGMName">Music</span></div>
+            <div class="audioControls">
+                <span class="playContainer">
+                    <img src="" id="playIcon" />
+                </span>
+                <div id="audioProgressBar">
+                    <div id="audioBufferBar"></div>
+                </div>
+                <span id="currentTime" class="time">0:00</span>
+                <span>/</span>
+                <span id="totalTime" class="time">0:00</span>
+            </div>
+            <p id="playlistText" class="hidden"></p>
+        </div>
+        <noscript><blockquote class="rainbow"><b>Javascript disabled!</b><br />Please enable javascript, as is it used on this page<br /></blockquote></noscript>
+    </div>
+
     <div id="blurred-glass-pane"></div>
 
     <video id="bg-video-intro" class="page-bg-video" autoplay muted playsinline>
@@ -33,7 +55,7 @@
         <source src="assets/bg/p3rbg.mp4" type="video/mp4">
     </video>
 
-    <div class="home-page-container">
+    <div class="home-page-container loaded">
         <div class="user-area">
             <img src="assets/brand/kaworupfp.avif" class="user-image" alt="kaworu pfp">
             <p class="p-after">"I'm bored"</p>

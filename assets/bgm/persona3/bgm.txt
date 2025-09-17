@@ -1,0 +1,6 @@
+p3 mix|true|false|false
+Persona 3 FES - Brand New days - The Beginning.mp3|p3fes.avif
+Persona 3 Portable - Time.mp3|p3p.avif
+Persona 3 - When The Moon's Reaching Out Stars.mp3|p3.avif
+Persona 3 - Junior Exam.mp3|p3.avif
+Persona 3 Portable - A Way Of Life.mp3|p3p.avif

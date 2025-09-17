@@ -1,0 +1,187 @@
+.hidden {
+	display: none;
+}
+
+.visible {
+	display: block;
+}
+
+#audioStatus {
+	position: fixed;
+	top: 5px;
+	right: 0;
+	width: 400px;
+	padding: 5px;
+	padding-right: calc(env(safe-area-inset-right) - 10px);
+	border: 2px solid #000;
+	background-color: #ffffffC0;
+	z-index: 50;
+	transform: translateX(5px);
+	animation: slideLeft 0.5s ease-in-out;
+	will-change: transform, bottom;
+	user-select: none;
+	-webkit-user-select: none;
+	-webkit-backdrop-filter: blur(5px);
+	backdrop-filter: blur(5px);
+}
+
+#audioStatus button {
+	border: none;
+	background: none;
+	cursor: pointer;
+}
+
+.audioControls {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	flex-wrap: wrap;
+}
+
+#playIcon {
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	margin: 5px 5px 0 0;
+	transition: transform 0.1s, outline 0.05s;
+	cursor: pointer;
+}
+
+#playIcon:hover {
+	outline: 2px solid rgba(255, 255, 255, 0.8);
+	filter: drop-shadow(0 0 0.2rem rgba(255, 255, 255));
+}
+
+#playIcon:active {
+	transform: scale(0.9);
+}
+
+@media (prefers-reduced-motion) {
+	#playIcon:active {
+		transform: none;
+	}
+}
+
+.BGMNameArea {
+	display: flex;
+    align-items: center;
+	margin-right: 7px;
+}
+
+#BGMName {
+	font-weight: 600;
+	margin-left: auto; 
+	/* margin-right: calc(max(20px, env(safe-area-inset-right) * 2.5)); */
+	font-size: 14px;
+}
+
+#BGMNameSelect {
+	user-select: all;
+	-webkit-user-select: text;
+}
+
+#audioProgressBar {
+	position: relative;
+	width: 200px;
+	height: 10px;
+	background-color: rgba(60, 77, 255, 0.2);
+	cursor: pointer;
+}
+
+#audioProgressBar:hover {
+	filter: drop-shadow(0 0 0.75rem #3fa0f5);
+}
+
+#audioBufferBar {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 0;
+	height: 10px;
+	background-color: #ffffff20;
+}
+
+#currentTime,
+#totalTime {
+	font-weight: 700;
+	font-size: 14px;
+	letter-spacing: 0.01em;
+	word-spacing: 0.01em;
+}
+
+#currentTime {
+	margin-left: 5px;
+}
+
+#playlistText {
+	text-align: center;
+	margin: 0;
+	margin-right: calc(max(20px, env(safe-area-inset-right) * 2.5));
+}
+
+.blankButton {
+	color: var(--text-color) !important;
+}
+
+.albumArt {
+	position: absolute;
+	left: 2px;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+	height: 95%;
+	filter: drop-shadow(0 0 0.5rem #FFF);
+	opacity: 0.8;
+	z-index: -1;
+}
+
+@media screen and (max-width: 1000px) {
+	#audioStatus {
+		position: fixed;
+		top: unset;
+		left: 0;
+		bottom: 0;
+		width: 100%;
+		width: calc(100% + env(safe-area-inset-right));
+		height: auto;
+		padding: 10px;
+		padding-left: max(10px, calc(env(safe-area-inset-left) - 10px));
+		margin-bottom: -25px;
+		border: none;
+		border-top: 2px solid #000;
+		transform: translateX(0);
+		animation: slideUp 0.5s ease-in-out;
+	}
+
+	#playIcon {
+		padding: 0;
+	}
+}
+
+@media screen and (orientation: landscape) and (max-width: 1000px) {
+	#BGMName {
+		padding-left: calc(env(safe-area-inset-left) - 35px);
+	}
+}
+
+@keyframes slideLeft {
+	0% {
+		transform: translateX(100%);
+		opacity: 0;
+	}
+	100% {
+		transform: translateX(5px);
+		opacity: 1;
+	}
+}
+
+@keyframes slideUp {
+	0% {
+		transform: translateY(100%);
+		opacity: 0;
+	}
+	100% {
+		transform: translateY(0);
+		opacity: 1;
+	}
+}
