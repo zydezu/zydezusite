@@ -62,15 +62,9 @@
 	}
 }
 
-.BGMNameArea {
-	display: flex;
-    align-items: center;
-	margin-right: 7px;
-}
-
 #BGMName {
 	font-weight: 600;
-	margin-left: auto; 
+	mix-blend-mode: difference;
 	/* margin-right: calc(max(20px, env(safe-area-inset-right) * 2.5)); */
 	font-size: 14px;
 }
