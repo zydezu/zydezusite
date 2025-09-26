@@ -12,6 +12,9 @@
     <link rel="stylesheet" href="css/bgvideo.css">
     <link rel="stylesheet" href="css/audioplayer.css">
 
+    <link rel="preload" as="image" href="assets/bg/p3rbganim.avif">
+    <link rel="preload" as="image" href="assets/bg/p3rbg.avif">
+
     <meta content="Main Page | zydezu.com" property="og:title" />
     <meta content="website" property="og:type" />
     <meta content="https://zydezu.com/" property="og:url" />
@@ -47,13 +50,8 @@
 
     <div id="blurred-glass-pane"></div>
 
-    <video id="bg-video-intro" class="page-bg-video" autoplay muted playsinline>
-        <source src="assets/bg/p3rbganim.mp4" type="video/mp4">
-    </video>
-
-    <video id="bg-video-loop" class="page-bg-video" preload="auto" autoplay muted playsinline loop>
-        <source src="assets/bg/p3rbg.mp4" type="video/mp4">
-    </video>
+    <img src="assets/bg/p3rbganim.avif" id="bg-video-intro" class="page-bg-video">
+    <img src="assets/bg/p3rbg.avif" id="bg-video-loop" class="page-bg-video">
 
     <div class="home-page-container loaded">
         <div class="user-area">

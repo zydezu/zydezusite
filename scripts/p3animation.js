@@ -1,14 +1,13 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const videoIntro = document.getElementById("bg-video-intro");
-    const videoLoop = document.getElementById("bg-video-loop");
+    const intro = document.getElementById("bg-video-intro");
+    const loop = document.getElementById("bg-video-loop");
 
-    setTimeout(
-        function () {
-            document.getElementById("blurred-glass-pane").classList.add("blurred");
-        }, 1500);
+    setTimeout(() => {
+        document.getElementById("blurred-glass-pane").classList.add("blurred");
+    }, 1500);
 
-    videoIntro.addEventListener("ended", () => {
-        videoLoop.play();
-        videoLoop.style.opacity = 1;
-    });
+    setTimeout(() => {
+        intro.style.opacity = 0;
+        loop.style.opacity = 1;
+    }, 5033);
 });
