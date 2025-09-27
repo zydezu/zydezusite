@@ -41,6 +41,23 @@ body {
     background-clip: content-box;
 }
 
+h1,
+h2,
+h3,
+h4 {
+    margin: 0;
+}
+
 .p-after {
     margin-top: 0;
+}
+
+.image {
+    max-width: 100%;
+}
+
+.caption {
+    font-size: 0.8em;
+    font-style: italic;
+    opacity: 0.6;
 }
