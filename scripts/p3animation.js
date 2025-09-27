@@ -11,16 +11,16 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         });
 
-        Promise.all(preloadImages).then(() => {
-            setTimeout(() => {
-                document.getElementById("blurred-glass-pane").classList.add("blurred");
-            }, 1500);
+        Promise.all(preloadImages);
 
-            setTimeout(() => {
-                intro.style.opacity = 0;
-                loop.style.opacity = 1;
-            }, 5033);
-        });
+        setTimeout(() => {
+            document.getElementById("blurred-glass-pane").classList.add("blurred");
+        }, 1500);
+
+        setTimeout(() => {
+            intro.style.opacity = 0;
+            loop.style.opacity = 1;
+        }, 5033);
     } else {
         setTimeout(() => {
             document.getElementById("blurred-glass-pane").classList.add("blurred");
