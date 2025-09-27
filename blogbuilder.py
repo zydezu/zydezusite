@@ -13,9 +13,8 @@ BLOG_HTML = """
     <meta content="{description}" name="description">
     <link rel="icon" href="https://zydezu.com/assets/favicon.jpg" type="image/jpg">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/homepage.css">
+    <link rel="stylesheet" href="css/blogpage.css">
     <link rel="stylesheet" href="css/bgvideo.css">
-    <link rel="stylesheet" href="css/audioplayer.css">
 
     <meta content="{title} | zydezu.com" property="og:title" />
     <meta content="website" property="og:type" />
@@ -24,6 +23,8 @@ BLOG_HTML = """
     <meta content="{description}" property="og:description" />
     <meta content="#3fa0f5" name="theme-color" />
     <meta content="summary_large_image" name="twitter:card" />
+
+    <script src="scripts/p3animation.js" type="module"></script>
 </head>
 
 <body>
@@ -33,9 +34,12 @@ BLOG_HTML = """
     <div class="blog">
         <a href="">Back</a>
         <h1>{title} ({date}) {tags}</h1>
-        {content}
+        <div class="blog-contents">
+            {content}
+        </div>
     </div>
 </body>
+</html>
 """
 
 class Blog:
@@ -67,13 +71,16 @@ class Blog:
         self.replaced_content = pattern.sub(replace_img, self.content)
 
         with open(html_file_path, "w") as f:
-            f.writelines(
-                BLOG_HTML
+            html_string =  (BLOG_HTML
                 .replace("{title}", self.title)
                 .replace("{date}", self.date)
                 .replace("{tags}", str(self.tags))
                 .replace("{description}", self.description)
                 .replace("{content}", self.replaced_content)
+            )
+
+            f.writelines(
+                html_string
             )
 
 def create_article(file):

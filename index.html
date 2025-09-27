@@ -53,6 +53,8 @@
         <div class="user-area">
             <img src="assets/brand/kaworupfp.avif" class="user-image" alt="kaworu pfp">
             <p class="p-after">"I'm bored"</p>
+
+            <button onclick=loadblog()>load a blog page</button>
         </div>
         <div class="posts-area">
             <p class="p-after">Comment here nerd</p>
@@ -60,3 +62,10 @@
         </div>
     </div>
 </body>
+<script>
+    function loadblog() {
+        const commentsection = document.getElementById("commentSection");
+        commentsection.src = "blog/2025/persona3themovie1springofbirth/"
+    }
+</script>
+</html>
