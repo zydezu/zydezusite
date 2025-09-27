@@ -15,12 +15,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
         setTimeout(() => {
             document.getElementById("blurred-glass-pane").classList.add("blurred");
-        }, 1500);
+        }, 1000);
 
         setTimeout(() => {
             intro.style.opacity = 0;
             loop.style.opacity = 1;
-        }, 5033);
+        }, 5000);
     } else {
         setTimeout(() => {
             document.getElementById("blurred-glass-pane").classList.add("blurred");
