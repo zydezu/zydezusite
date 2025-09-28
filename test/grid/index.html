@@ -73,7 +73,7 @@
 
     <script>
         const GRID_SIZE_M = 5; // target grid size in metres
-        const MAX_CELLS = 10000; // allow up to this many cells; otherwise step up
+        const MAX_CELLS = 100000; // allow up to this many cells; otherwise step up
         const STORAGE_KEY = 'searchedSquares_v1';
 
         const map = L.map('map').setView([53.9477317, -1.0280387], 18); // default center; zoom in to see 5m squares
@@ -158,11 +158,11 @@
             const endX = Math.ceil(maxX / step) * step;
             const endY = Math.ceil(maxY / step) * step;
 
-            // safety cap
-            if ((endX - startX) / step * (endY - startY) / step > 20000) {
-                document.getElementById('status').textContent = 'Too many cells to render — please zoom in.';
-                return;
-            }
+            // // safety cap
+            // if ((endX - startX) / step * (endY - startY) / step > 20000) {
+            //     document.getElementById('status').textContent = 'Too many cells to render — please zoom in.';
+            //     return;
+            // }
 
             for (let x = startX; x < endX; x += step) {
                 for (let y = startY; y < endY; y += step) {
