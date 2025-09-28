@@ -261,7 +261,6 @@
                 const lng = pos.coords.longitude;
                 const accuracy = pos.coords.accuracy;
 
-
                 if (!locationMarker) {
                     locationMarker = L.circleMarker([lat, lng], {
                         radius: 6,
@@ -275,7 +274,7 @@
                     locationCircle.setLatLng([lat, lng]);
                     locationCircle.setRadius(accuracy);
                 }
-                map.setView([lat, lng], 18);
+                // map.setView([lat, lng], 18);
                 document.getElementById('status').textContent = `Tracking: ${lat.toFixed(6)}, ${lng.toFixed(6)} ±${accuracy.toFixed(0)}m`;
             }, (err) => {
                 alert('Could not get your location: ' + err.message);
