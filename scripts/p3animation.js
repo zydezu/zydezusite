@@ -1,29 +1,31 @@
 document.addEventListener("DOMContentLoaded", () => {
     const intro = document.getElementById("bg-video-intro");
-    const loop = document.getElementById("bg-video-loop");
+    let looping = false;
 
-    if (intro) {
-        const preloadImages = [intro.src, loop.src].map(src => {
-            return new Promise(resolve => {
-                const img = new Image();
-                img.src = src;
-                img.onload = resolve;
-            });
-        });
+    setTimeout(() => {
+        document.getElementById("blurred-glass-pane").classList.add("blurred");
+    }, 1000);
 
-        Promise.all(preloadImages);
+    setTimeout(() => {
+        looping = true;
+        intro.currentTime = 5;
+        intro.play();
+        loopVideoSegment();
+    }, 5000);
 
-        setTimeout(() => {
-            document.getElementById("blurred-glass-pane").classList.add("blurred");
-        }, 1000);
+    function loopVideoSegment() {
+        if (!looping) return;
 
-        setTimeout(() => {
-            intro.style.opacity = 0;
-            loop.style.opacity = 1;
-        }, 5000);
-    } else {
-        setTimeout(() => {
-            document.getElementById("blurred-glass-pane").classList.add("blurred");
-        }, 500);
+        const loopStart = 5;
+        const loopEnd = 11.65;
+
+        function step() {
+            if (intro.currentTime >= loopEnd) {
+                intro.currentTime = loopStart;
+            }
+            requestAnimationFrame(step);
+        }
+
+        requestAnimationFrame(step);
     }
 });
