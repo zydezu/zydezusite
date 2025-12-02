@@ -35,6 +35,16 @@
     backdrop-filter: blur(5px);
 }
 
+#statuscafe {
+    padding: .5em;
+    background-color: #ffffff80;
+    border: 1px solid #000;
+    backdrop-filter: blur(5px);
+}
+
+#statuscafe-content {
+    margin: 0 1em 0.5em 1em;
+}
 
 @keyframes fadeIn {
     from { opacity: 0; }
